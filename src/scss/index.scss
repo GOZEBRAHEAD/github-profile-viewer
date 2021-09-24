@@ -1,0 +1,275 @@
+@import "_colores.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: $color-500;
+    background-color: $color-150;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.index__layout {
+    
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1.5fr 3.5fr;
+
+    &__header {
+        height: 100%;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-right: 1rem;
+        border-right: 2px solid $color-200;
+        background-color: $color-800;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &__title {
+            color: $color-50;
+            margin-bottom: 0.2rem;
+        }
+
+        &__separator {
+            height: 1px;
+            width: 80%;
+            background-color: $color-300;
+            margin-bottom: 2rem;
+        }
+
+        &__description {
+            
+            margin-top: 1rem;
+            color: $color-100;
+            line-height: 1.7;
+
+            code {
+                color: $color-300;
+                font-style: italic;
+            }
+        }
+
+        label {
+            margin: auto 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                color: $color-200;
+            }
+            
+            input {
+                height: 1.4rem;
+                font-family: sans-serif;
+                font-size: 1rem;
+                margin: 0 0.75rem;
+                padding: 0.2rem 0.4rem;
+                border: none;
+                border-radius: 4px;
+                background-color: whitesmoke;
+    
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .fa-search {
+                color: $color-150;
+                font-size: 1.15rem;
+                cursor: pointer;
+            }
+        }
+
+        &__links {
+            width: 10rem;
+            position: absolute;
+            bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            i {
+                font-size: 1.75em;
+                color: $color-50;
+                transition: all 0.2s linear;
+
+                &:hover {
+                    color: $color-300;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+
+    &__content {
+        height: 100%;
+        background-color: $color-700;
+
+        display: grid;
+        place-items: center;
+
+        &__card {
+            height: 85%;
+            width: 50%;
+            position: relative;
+            box-shadow: 10px 10px 5px $color-850;
+            border-radius: 1.5rem;
+            color: $color-300;
+
+            display: grid;
+            grid-template-areas: "card-avatar"
+                                 "card-user"
+                                 "card-subtitle"
+                                 "card-socials"
+                                 "card-repos"
+                                 "card-profile";
+            place-items: center;
+
+            .card__background__form {
+
+                grid-area: card-avatar;
+                
+                height: 12rem;
+                width: 12rem;
+                background-color: $color-800;
+                border-radius: 50%;
+            }
+
+            &__avatar {
+
+                grid-area: card-avatar;
+
+                height: 10rem;
+                width: 10rem;
+                border-radius: 50%;
+                user-select: none;
+                box-shadow: 0 0 0 0 rgba($color: $color-500, $alpha: 0.9);
+                animation: pulse 2s infinite;
+
+                img {
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            &__user {
+
+                grid-area: card-user;
+                
+                margin-top: -2.5rem;
+                color: $color-50;
+                font-size: 2em;
+
+                &::after, &::before {
+                    color: $color-500;
+                }
+
+                &::after {
+                    content: "»";
+                    margin-left: 0.5rem;
+                }
+                
+                &::before {
+                    content: "«";
+                    margin-right: 0.5rem;
+                }
+            }
+
+            &__subtitle {
+
+                grid-area: card-subtitle;
+
+                margin-top: -2.25rem;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                gap: 0.5rem;
+
+                &__bio {
+                    font-size: 1.1em;
+                }
+    
+                &__location {
+                    font-size: 0.9em;
+    
+                    i {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+            
+            &__socials {
+                grid-area: card-socials;
+
+                width: 50%;
+                font-size: 1em;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                p span {
+                    color: $color-50;
+                }
+            }
+
+            &__repos {
+                grid-area: card-repos;
+
+                span {
+                    color: $color-50;
+                }
+            }
+
+            &__profile {
+
+                grid-area: card-profile;
+                
+                text-decoration: none;
+                color: $color-50;
+                background-color: $color-400;
+                border: 1px solid $color-400;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                transition: all 0.2s linear;
+
+                &:hover {
+                    background-color: $color-600;
+                    border: 1px solid $color-600;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+
+	0% {
+        box-shadow: 0 0 0 0 rgba($color: $color-500, $alpha: 0.7);
+	}
+
+	70% {
+		box-shadow: 0 0 0 1rem rgba($color: $color-500, $alpha: 0);
+	}
+
+	100% {
+		box-shadow: 0 0 0 0 rgba($color: $color-500, $alpha: 0);
+	}
+}

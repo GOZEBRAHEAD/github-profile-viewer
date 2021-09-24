@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/index.css" type="text/css" />
+
+    <script src="https://kit.fontawesome.com/c39033e14b.js" crossorigin="anonymous"></script>
+
+    <title>GitHub profile viewer</title>
+</head>
+<body>
+
+    <div class="index__layout">
+
+        <header class="index__layout__header">
+
+            <h1 class="index__layout__header__title">GitHub profile viewer</h1>
+
+            <div class="index__layout__header__separator"></div>
+
+            <div class="index__layout__header__description">
+                <p>This app uses the GitHub Users API</p>
+                <code>https://api.github.com/users/</code>
+                <p>Please, give it a try!</p>
+            </div>
+
+            <label for="user">
+                <p>User:</p>
+                <input type="search" name="user" id="user-input" />
+                <i class="fas fa-search" id="btn-search"></i>
+            </label>
+
+            <div class="index__layout__header__links">
+                <a href="https://github.com/GOZEBRAHEAD" aria-label="GitHub" target="_blank" rel="noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/luciano-nieves/" aria-label="Linkedin" target="_blank" rel="noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/lucho_nieves/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+        </header>
+
+        <main class="index__layout__content" id="content-card"></main>
+
+    </div>
+    
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
