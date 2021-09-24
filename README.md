@@ -1,6 +1,6 @@
 # GitHub profile viewer
 
-This app allows you to see any GitHub user's data.
+This app allows you to see the data of any GitHub user.
 
 Made with HTML5, CSS3, SCSS and JavaScript. API used in this project:
 ```bash
